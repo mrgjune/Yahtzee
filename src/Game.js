@@ -31,6 +31,7 @@ class Game extends Component {
     };
     this.roll = this.roll.bind(this);
     this.doScore = this.doScore.bind(this);
+    this.toggleLocked = this.toggleLocked.bind(this);
   }
 
   roll(evt) {
@@ -65,6 +66,7 @@ class Game extends Component {
   }
 
   render() {
+    
     return (
       <section>
         <Dice dice={this.state.dice} locked={this.state.locked} toggleLocked={this.toggleLocked} />
