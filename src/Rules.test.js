@@ -1,4 +1,17 @@
-import { ones, twos, threes, fours, fives, sixes, threeOfKind, fourOfKind, fullHouse, smallStraight, largeStraight, yahtzee, chance } from './Rules';
+import { ones, 
+  twos, 
+  threes, 
+  fours, 
+  fives, 
+  sixes, 
+  threeOfKind, 
+  fourOfKind, 
+  fullHouse, 
+  smallStraight, 
+  largeStraight, 
+  yahtzee, 
+  chance 
+} from './Rules';
 
 it('works for ones', () => {
   expect(ones.evalRoll([1, 1, 1, 2, 2])).toEqual(3);

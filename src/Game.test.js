@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
 import Game from "./Game";
 import Dice from "./Dice"
@@ -21,5 +21,20 @@ it("tests if when clicked on dice it is locked", function() {
     expect(lockedBoxMock).toHaveBeenCalled();
 
 });
+
+it("tests if when clicked to role if no more roles it is locked", function() {
+    
+    const wrapper = mount (<Game/>)
+    wrapper.setState(
+        {rollsLeft: 0}
+    );
+
+    wrapper.find(".Game-reroll").simulate("click")
+    console.log(wrapper.state().locked)
+
+    expect(wrapper.state().locked.includes(false)).toEqual(false);
+
+});
+
 
 

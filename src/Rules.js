@@ -76,15 +76,14 @@ class FullHouse extends Rule {
 class SmallStraight extends Rule {
   evalRoll(dice) {
     const d = new Set(dice);
-    console.log(d.size)
     if (d.size >= 4 && d.has(4) && d.has(3)) {
       if ((d.has(5) && d.has(6)) || (d.has(1) && d.has(2)) || (d.has(5) && d.has(2))) {
         return this.score;
       }
     }
-    else {
-      return 0;
-    }
+    return 0;
+    
+    
   }
 
 }

@@ -68,7 +68,7 @@ class ScoreTable extends Component {
                      doScore={() => doScore("smallStraight", smallStraight.evalRoll)} />
             <RuleRow name="Large Straight"
                      score={scores.largeStraight}
-                     doScore={() => doScore("largeStraight", largeStraight)} />
+                     doScore={() => doScore("largeStraight", largeStraight.evalRoll)} />
             <RuleRow name="Yahtzee"
                      score={scores.yahtzee}
                      doScore={() => doScore("yahtzee", yahtzee.evalRoll)} />
