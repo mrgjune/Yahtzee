@@ -31,6 +31,7 @@ class Game extends Component {
     };
     this.roll = this.roll.bind(this);
     this.doScore = this.doScore.bind(this);
+    // Part two Fix clicking Dice----- toggeledLock did not get currect this. BIND it
     this.toggleLocked = this.toggleLocked.bind(this)
   }
 
@@ -46,7 +47,7 @@ class Game extends Component {
 
   toggleLocked(idx) {
     // toggle whether idx is in locked or not. 
-    // If st.rollsLeft is 0 toggle is no longer available
+    // PART FIVE----FIXED If st.rollsLeft is 0 toggle is no longer available
     this.setState(st => (
       st.rollsLeft === 0 ? {} : {locked: [
         ...st.locked.slice(0, idx),
@@ -57,9 +58,9 @@ class Game extends Component {
   }
   
   doScore(rulename, ruleFn) {
-    console.log(ruleFn)
-   
-    // evaluate this ruleFn with the dice and score this rulename
+   // evaluate this ruleFn with the dice and score this rulename
+
+  // PART SIX---FIXED score is only going to change state if score is undefined
     this.setState(st => (
       st.scores[rulename] !== undefined ? {} :
       {scores: { ...st.scores, [rulename]: ruleFn(this.state.dice) },

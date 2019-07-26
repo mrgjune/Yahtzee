@@ -59,21 +59,20 @@ class SumDistro extends Rule {
 }
 
 /** Check if full house (3-of-kind and 2-of-kind) */
-
+/** ValueCounts are count of its unique values. they have to be 2 and 3 to be fullhouse */
 class FullHouse extends Rule {
   evalRoll(dice) {
-    let freqCounter = this.freq(dice);
-    if (freqCounter.includes(2) && freqCounter.includes(3)) {
-      return this.score;
-    } else {
-      return 0;
-    }
+    let valueCounts = this.freq(dice);
+    return valueCounts.includes(2) && valueCounts.includes(3) ? this.score: 0;
+   
   }
 }
 
 /** Check for small straights. */
-
+//  SmallStraight must have at least 4 unique values and include a 3 and 4
+// it must also include either 5 and 6 or 1 and 2 or 5 and 2
 class SmallStraight extends Rule {
+  
   evalRoll(dice) {
     const d = new Set(dice);
     if (d.size >= 4 && d.has(4) && d.has(3)) {
@@ -82,10 +81,7 @@ class SmallStraight extends Rule {
       }
     }
     return 0;
-    
-    
   }
-
 }
 
 /** Check for large straights. */
