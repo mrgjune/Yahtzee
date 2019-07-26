@@ -1,0 +1,17 @@
+.RuleRow-active:hover {
+  background-color: yellow;
+}
+
+.RuleRow td {
+  padding: 0.3em;
+  border-bottom: solid 1px black;
+}
+
+.RuleRow-name {
+  width: 100%;
+  text-align: left;
+}
+
+.RuleRow-score {
+  text-align: right;
+}

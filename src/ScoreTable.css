@@ -1,0 +1,9 @@
+.ScoreTable-section {
+  display: inline-block;
+  vertical-align: top;
+  width: 10em;
+}
+
+.ScoreTable-section-lower {
+  margin-left: 3em;
+}
